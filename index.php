@@ -32,34 +32,31 @@
             <div class="card-body">
                 <form action="download.php" method="POST">
                     <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-md-4">
                             <div class="form-group">
                                 <label for="lokasi">Lokasi Tempat Menyimpan</label>
                                 <div class="row">
-                                    <div class="col-md-3">
+                                    <div class="col-md-12">
                                         <input type="text" value="Download/" class="form-control" disabled>
-                                    </div>
-                                    <div class="col-md-9">
-                                        <input type="text" class="form-control" id="lokasi" placeholder="Masukkan Absolute Path Dari Root" name="lokasi">
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-8">
                             <div class="form-group">
                                 <label for="folder">Nama Folder</label>
                                 <div class="row">
-                                    <div class="col-md-7">
+                                    <div class="col-md-9">
                                         <input type="text" class="form-control" id="folder" placeholder="Masukkan Nama Folder" name="folder" REQUIRED>
                                     </div>
-                                    <div class="col-md-5">
+                                    <div class="col-md-3">
                                         <p class="btn btn-info w-50" id="today">Hari Ini</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-12">
-                            <button type="submit" class="btn btn-primary w-100">Download</button>
+                            <button type="submit" class="btn btn-primary w-100" id="download">Download</button>
                         </div>
                     </div>
                 </form>
