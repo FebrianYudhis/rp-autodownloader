@@ -30,7 +30,7 @@
                 <h1 class="text-center font-weight-bold">Aplikasi Auto Downloader</h1>
             </div>
             <div class="card-body">
-                <form action="download.php" method="POST">
+                <form action="download.php" method="POST" id="download">
                     <div class="row">
                         <div class="col-md-4">
                             <div class="form-group">
@@ -56,7 +56,7 @@
                             </div>
                         </div>
                         <div class="col-md-12">
-                            <button type="submit" class="btn btn-primary w-100" id="download">Download</button>
+                            <button type="submit" class="btn btn-primary w-100" id="submit">Download</button>
                         </div>
                     </div>
                 </form>
@@ -64,13 +64,9 @@
         </div>
     </div>
 
-    <link rel="stylesheet" href="assets/js/jquery-3.5.1.slim.min.js">
-    <link rel="stylesheet" href="assets/js/bootstrap.bundle.min.js">
+    <script src="assets/js/jquery-3.6.0.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
     <script>
-        let folder = document.getElementById("today");
-        let isi = document.getElementById("folder");
-
-
         let tanggal = new Date();
         let bulan = tanggal.getMonth() + 1;
         let hari = tanggal.getDate();
@@ -78,8 +74,15 @@
 
         today = hari + "-" + bulan + "-" + tahun;
 
-        folder.addEventListener("click", function() {
-            isi.setAttribute("value", today);
+        $("#today").click(function() {
+            $("#folder").attr("value", today);
+        });
+
+        $("#download").submit(function() {
+            $("#submit").removeClass("btn-primary")
+            $("#submit").addClass("btn-secondary")
+            $("#submit").attr('disabled', true)
+            $("#submit").html("<span class='spinner-grow spinner-grow-sm' role='status' aria-hidden='true'></span> Mengunduh..")
         });
     </script>
 </body>
