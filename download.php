@@ -18,12 +18,12 @@ $jumlah = count($download);
 for ($i = 0; $i < $jumlah; $i++) {
 
     // Buat Percabangan
-    if ((@file_get_contents($download[$i][0])) === false) {
+    if ((@file_get_contents($download[$i])) === false) {
         // Jika URL Gagal Untuk Diakses Maka Abaikan
         continue;
     } else {
         // Jika URL Dapat Diakses Maka Simpan Filenya
-        file_put_contents($tujuan . '/' . $download[$i][1], file_get_contents($download[$i][0]));
+        file_put_contents($tujuan . '/' . basename($download[$i]), file_get_contents($download[$i]));
     }
 }
 

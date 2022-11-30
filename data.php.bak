@@ -3,12 +3,6 @@
 // Silahkan ikuti template berikut
 
 $download = [
-    [
-        "url1",
-        "namafile1.ekstensi"
-    ],
-    [
-        "url2",
-        "namafile2.ekstensi"
-    ]
+    "url1",
+    "url2
 ];
